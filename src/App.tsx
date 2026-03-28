@@ -2,6 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import { ErrorBoundary } from '@/components/common/ErrorBoundary';
 import { AppShell } from '@/components/layout/AppShell';
 import { HomePage } from '@/pages/HomePage';
+import { AboutPage } from '@/pages/support/AboutPage';
+import { ContactPage } from '@/pages/support/ContactPage';
+import { HelpCenterPage } from '@/pages/support/HelpCenterPage';
 import { LoginPage } from '@/pages/auth/LoginPage';
 import { RegisterPage } from '@/pages/auth/RegisterPage';
 import { ForgotPasswordPage } from '@/pages/auth/ForgotPasswordPage';
@@ -36,6 +39,9 @@ export default function App() {
         <Route path="/community" element={<CommunityListPage />} />
         <Route path="/community/post/:id" element={<PostDetailPage />} />
         <Route path="/me" element={<ProfilePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/help" element={<HelpCenterPage />} />
         <Route path="/auth/login" element={<LoginPage />} />
         <Route path="/auth/register" element={<RegisterPage />} />
         <Route path="/auth/forgot-password" element={<ForgotPasswordPage />} />

@@ -23,6 +23,24 @@ const guideCards = [
   { title: '最后进社区', desc: '看看新手主人都在问什么，也能自己发帖记录。', to: '/community' },
 ];
 
+const footerHelpLinks = [
+  {
+    to: '/about',
+    title: '关于我们',
+    desc: '了解汪汪小站的定位、内容原则和当前版本范围。',
+  },
+  {
+    to: '/contact',
+    title: '联系我们',
+    desc: '查看反馈邮箱、合作方向和演示项目联络方式。',
+  },
+  {
+    to: '/help',
+    title: '帮助中心',
+    desc: '快速了解站点使用方式、常见问题和演示说明。',
+  },
+];
+
 export const AppShell = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -174,11 +192,14 @@ export const AppShell = () => {
           </div>
           <div>
             <h4 className="font-semibold text-ink">帮助信息</h4>
-            <div className="mt-3 grid gap-2 text-sm text-slate-500">
-              <span>关于我们</span>
-              <span>联系我们</span>
-              <span>帮助中心</span>
-              <span>© 2026 AboutDogs</span>
+            <div className="mt-3 grid gap-3 text-sm text-slate-500">
+              {footerHelpLinks.map((item) => (
+                <Link key={item.to} to={item.to} className="rounded-2xl p-2 transition hover:bg-brand-50 hover:text-brand-700">
+                  <div className="font-medium text-slate-700">{item.title}</div>
+                  <div className="mt-1 text-xs leading-5 text-slate-500">{item.desc}</div>
+                </Link>
+              ))}
+              <span className="pt-1 text-xs text-slate-400">© 2026 AboutDogs</span>
             </div>
           </div>
         </div>
